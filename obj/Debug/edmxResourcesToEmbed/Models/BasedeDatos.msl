@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TablasModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Direccion">
+      <EntityTypeMapping TypeName="TablasModel.Direccion">
+        <MappingFragment StoreEntitySet="Direccion">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Calle" ColumnName="Calle" />
+          <ScalarProperty Name="Colonia" ColumnName="Colonia" />
+          <ScalarProperty Name="Cp" ColumnName="Cp" />
+          <ScalarProperty Name="NumInterior" ColumnName="NumInterior" />
+          <ScalarProperty Name="NumExterior" ColumnName="NumExterior" />
+          <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personas">
+      <EntityTypeMapping TypeName="TablasModel.Personas">
+        <MappingFragment StoreEntitySet="Personas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+          <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Telefonos">
+      <EntityTypeMapping TypeName="TablasModel.Telefonos">
+        <MappingFragment StoreEntitySet="Telefonos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NumeroCelular" ColumnName="NumeroCelular" />
+          <ScalarProperty Name="NumeroFijo" ColumnName="NumeroFijo" />
+          <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

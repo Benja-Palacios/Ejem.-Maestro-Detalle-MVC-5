@@ -1,0 +1,91 @@
+﻿@model _3Tablas.ViewModel.PersonasVM
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Registro de Personas</h2>
+
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        Captura de Datos personales
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        @using (Html.BeginForm("Create", "Persona", FormMethod.Post))
+                        {
+                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                <label>Nombre:</label>
+                                @Html.TextBoxFor(model => model.Nombre, null, new { @class = "form-control", placeHolder = "Nombre", Required = "Required" })
+                                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                <label>Apellido Paterno:</label>
+                                @Html.TextBoxFor(model => model.ApellidoPaterno, null, new {@class = "form-control", placeHolder = "Apellido Paterno", Required ="Required"})
+                                @Html.ValidationMessageFor(model => model.ApellidoPaterno,"", new {@class = "text-danger"})
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                <label>Apellido Materno:</label>
+                                @Html.TextBoxFor(model => model.ApellidoMaterno, null , new {@class = "form-control", placeHolder = "Apellido Materno"})
+                                @Html.ValidationMessageFor(model => model.ApellidoMaterno, "", new {@class = "text-danger"})
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+                                <label>Edad:</label>
+                                @Html.TextBoxFor(model => model.Edad, null, new {@class = "form-control", placeHolder = "0"})
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                <label>Calle:</label>
+                                @Html.TextBoxFor(model => model.DireccionVM.Calle, null, new {@class = "form-control", placeHolder = "Calle"})
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                <label>Colonia</label>
+                                @Html.TextBoxFor(model => model.DireccionVM.Colonia,null, new {@class = "form-control", placeHolder = "Colonia"})
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+                                <label>Codigo Postal</label>
+                                @Html.TextBoxFor(model => model.DireccionVM.Colonia, null, new {@class = "form-control", placeHolder = "C.p"})
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                <label>Num.Interior:</label>
+                                @Html.TextBoxFor(model => model.DireccionVM.NumeroInterior, null , new {@class = "form-control", placeHolder ="Num.Interior"})
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+                                <label>Num.Exterior:</label>
+                                @Html.TextBoxFor(model => model.DireccionVM.NumeroExterior, null, new { @class = "form-control", placeHolder = "Num.Exterior" })
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                <label>Num.Celular:</label>
+                                @Html.TextBoxFor(model => model.TelefonoVM.NumeroCelular, null, new {@class = "form-control", placeHolder = "Num.Celular"})
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                <label>Num.Local:</label>
+                                @Html.TextBoxFor(model => model.TelefonoVM.NumeroFijo, null, new { @class = "form-control", placeHolder = "Num.Fijo" })
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                <label>Accion:</label>
+                                <input type="submit" value="Guardar" class="btn btn-sm btn-block btn-success"/>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+

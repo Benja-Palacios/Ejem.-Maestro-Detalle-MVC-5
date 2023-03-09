@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TestEva3TablasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Direccion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Calle" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Colonia" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Cp" Type="int" Nullable="false" />
+    <Property Name="NumInterior" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NumExterior" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdPersona" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Personas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ApellidoPaterno" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ApellidoMaterno" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Edad" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Telefonos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NumeroCelular" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NumeroFijo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdPersona" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Direccion_Personas">
+    <End Role="Personas" Type="Self.Personas" Multiplicity="1" />
+    <End Role="Direccion" Type="Self.Direccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Direccion">
+        <PropertyRef Name="IdPersona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Telefonos_Personas">
+    <End Role="Personas" Type="Self.Personas" Multiplicity="1" />
+    <End Role="Telefonos" Type="Self.Telefonos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Telefonos">
+        <PropertyRef Name="IdPersona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TestEva3TablasModelStoreContainer">
+    <EntitySet Name="Direccion" EntityType="Self.Direccion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Personas" EntityType="Self.Personas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Telefonos" EntityType="Self.Telefonos" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Direccion_Personas" Association="Self.FK_Direccion_Personas">
+      <End Role="Personas" EntitySet="Personas" />
+      <End Role="Direccion" EntitySet="Direccion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Telefonos_Personas" Association="Self.FK_Telefonos_Personas">
+      <End Role="Personas" EntitySet="Personas" />
+      <End Role="Telefonos" EntitySet="Telefonos" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

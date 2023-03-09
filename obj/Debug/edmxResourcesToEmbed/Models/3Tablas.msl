@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TestEva3TablasModelStoreContainer" CdmEntityContainer="TestEva3TablasEntities">
+    <EntitySetMapping Name="Direccion">
+      <EntityTypeMapping TypeName="TestEva3TablasModel.Direccion">
+        <MappingFragment StoreEntitySet="Direccion">
+          <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
+          <ScalarProperty Name="NumExterior" ColumnName="NumExterior" />
+          <ScalarProperty Name="NumInterior" ColumnName="NumInterior" />
+          <ScalarProperty Name="Cp" ColumnName="Cp" />
+          <ScalarProperty Name="Colonia" ColumnName="Colonia" />
+          <ScalarProperty Name="Calle" ColumnName="Calle" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personas">
+      <EntityTypeMapping TypeName="TestEva3TablasModel.Personas">
+        <MappingFragment StoreEntitySet="Personas">
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+          <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+          <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Telefonos">
+      <EntityTypeMapping TypeName="TestEva3TablasModel.Telefonos">
+        <MappingFragment StoreEntitySet="Telefonos">
+          <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
+          <ScalarProperty Name="NumeroFijo" ColumnName="NumeroFijo" />
+          <ScalarProperty Name="NumeroCelular" ColumnName="NumeroCelular" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
